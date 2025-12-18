@@ -69,12 +69,12 @@ function Projects() {
           <br />
           <br />
 
-      /*
+    {/*
           <span>Psst.. backend is feeling kinda useless rn. By pressing this button you can make it feel important: </span> 
             <button className="click-button" onClick={handleClick}>  
             {clickCount}
             </button>
-      */
+      */}
       
       </section>
     )
