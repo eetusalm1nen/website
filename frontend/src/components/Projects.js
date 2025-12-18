@@ -53,6 +53,7 @@ function Projects() {
           <ul className="irl-list">
             <li><small>Co-founder of Root.</small></li>
             <a href="https://rootexpo.fi" className="red-question">Rootexpo.fi</a>
+            <li><small>Boost Turku board member.</small></li>
           </ul>
 
           <br />
