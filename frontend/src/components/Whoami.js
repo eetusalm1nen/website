@@ -1,5 +1,6 @@
 import LinkedinLogo from '../images/LinkedInLogo.svg';
 import InstagramLogo from '../images/InstagramLogo.svg';
+import myCV from '../images/CV_eetu_salminen.pdf';
 
 function WhoAmI() {
   return (
@@ -23,12 +24,13 @@ function WhoAmI() {
           <img src={InstagramLogo} alt="Instagram" className="social-icon" />
         </a>
 
-        <a 
-          href="/cv_Eetu_Salminen.pdf" 
-          download="cv_Eetu_Salminen.pdf" 
-          className="cv-button"
-            >
-        Download my CV
+      <a 
+        href={myCV} 
+        download="cv_Eetu_Salminen.pdf" 
+        className="cv-button"
+      >
+      Download my CV
+    </a>
     </a>
 
       </div>
