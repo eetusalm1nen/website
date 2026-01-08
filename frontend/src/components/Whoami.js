@@ -31,7 +31,6 @@ function WhoAmI() {
       >
       Download my CV
     </a>
-    </a>
 
       </div>
     </section>
