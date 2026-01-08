@@ -1,4 +1,4 @@
-import myImage from '../images/OmaKuva.JPG';
+import myImage from '../images/Eetu_Salminen_020126_web-205.jpg';
 
 function Header() {
     return (
