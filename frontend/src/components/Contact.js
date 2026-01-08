@@ -14,7 +14,7 @@ function Contact() {
         <footer className="footer">
           <p>With love <span class="red-question">~</span>Eetu</p>
         </footer>
-
+/*
           <div className="stickman">
           <div className="head"></div>
           <div className="body"></div>
@@ -30,7 +30,7 @@ function Contact() {
             <div className="ball ball4"></div>
           </div>  
           </div>
-
+*/
       </section>
     )
 }
