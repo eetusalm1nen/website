@@ -23,7 +23,13 @@ function WhoAmI() {
           <img src={InstagramLogo} alt="Instagram" className="social-icon" />
         </a>
 
-        <a className="cv-button">Download my CV</a>
+        <a 
+          href="/CV EETU SALMINEN EN.pdf.pdf" 
+          download="CV EETU SALMINEN EN.pdf.pdf" 
+          className="cv-button"
+            >
+        Download my CV
+    </a>
 
       </div>
     </section>
