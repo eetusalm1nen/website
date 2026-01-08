@@ -24,8 +24,8 @@ function WhoAmI() {
         </a>
 
         <a 
-          href="/CV EETU SALMINEN EN.pdf.pdf" 
-          download="CV EETU SALMINEN EN.pdf.pdf" 
+          href="/cv_Eetu_Salminen.pdf" 
+          download="cv_Eetu_Salminen.pdf" 
           className="cv-button"
             >
         Download my CV
