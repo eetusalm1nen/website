@@ -1,12 +1,13 @@
-import myImage from '../images/OmaKuva.JPG';
+import myImage from '../images/omakuva2.jpg';
 
-function Header() {
+function Header( { headerSub }) {
     return (
         <div className="image-container">
-            <img src={myImage} alt="My photo!" />
+            <img src={myImage} alt="Eetu Salminen" className="header-image" />
+            
             <div className="text-overlay">
                 <h1>Eetu Salminen</h1>
-                <h2>IT student minoring Industrial Engineering.</h2>
+                <h2>{headerSub}</h2>
             </div>  
         </div>
     )

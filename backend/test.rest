@@ -1,1 +1,14 @@
-POST http://localhost:3001/api/clicks
+POST http://localhost:5050/api/content
+Content-Type: application/json
+
+{
+  "bio": "Tämä on dynaaminen esittelytekstini, joka asuu MongoDB-pilvessä.",
+  "linkedinUrl": "https://www.linkedin.com/in/eetusalminen/",
+  "projects": [
+    {
+      "name": "Dynaaminen Portfolio",
+      "description": "Full Stack -projekti, jossa on Node.js-bäkkäri.",
+      "link": "https://github.com/eetusalm1nen/website"
+    }
+  ]
+}
