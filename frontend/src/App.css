@@ -1,6 +1,7 @@
+
 :root{
-  --primary-color: rgb(18, 107, 0);
-  --secondary-color: #bbbbbb;
+  --primary-color: rgb(12, 64, 0);
+  --secondary-color: #8a8a8a;
   --background-color: black;
   --text-color: white;
 }
@@ -24,7 +25,7 @@
   right: -50px;
   width: 500px;
   height: 500px;
-  border-radius: 48% 52% 0% 100% / 0% 1% 99% 100% ;
+  border-radius: 48% 52% 0% 400% / 0% 1% 99% 100% ;
   background: var(--secondary-color);
 }
 
@@ -241,7 +242,7 @@
 }
 
 .projects-section {
-  padding: 15px;
+  padding: 30px;
   font-style: inherit;
   max-width: 800px;
   margin: 0 auto;
@@ -278,7 +279,7 @@
 }
 
 .Reach-me {
-  padding: 0px;
+  padding: 30px;
   font-style: inherit;
   max-width: 800px;
   margin: 0 auto;
@@ -379,6 +380,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden;
 }
 
 /* border reveal for debugging 
@@ -421,5 +423,74 @@ html, body {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  /* Header pystyyn */
+  .image-container, 
+  .header-content {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 40px 20px !important;
+    align-items: center !important;
+  }
+
+  .header-image {
+    margin: 0 0 20px 0 !important; /* Poistetaan se 80px oikea marginaali */
+    height: 250px !important;
+    width: auto !important;
+  }
+
+  .text-overlay {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .text-overlay h1 {
+    font-size: 2.5rem !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+
+  /* PIDETÄÄN NAPIT VASEMMALLA TABLETISSA */
+.socials {
+    display: flex !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .image-container, 
+  .header-content,
+  .text-overlay {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Pakottaa sisällön vaaka-akselilla keskelle */
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .header-image {
+    margin: 0px 0px 20px 0px !important; /* Poistaa kaikki sivumarginaalit ja lisää tilaa alle */
+    display: block !important;
+  }
+
+  .text-overlay h1 {
+    width: 100% !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
 }
 
