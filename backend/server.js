@@ -7,7 +7,16 @@ const cors = require('cors');
 const app = express();
 
 // 2. Middlewaret (TÄRKEÄÄ: Näiden on oltava ennen reittejä)
-app.use(cors()); 
+const corsOptions = {
+  origin: [
+    'http://localhost:3000', 
+    'https://website-lime-ten-53.vercel.app/'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // 3. Tietokantayhteys
