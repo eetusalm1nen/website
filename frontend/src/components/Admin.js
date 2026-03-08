@@ -48,28 +48,38 @@ useEffect(() => {
     .catch(err => console.error("Haku epäonnistui:", err));
 }, []);
 
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5050';
+
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
   const handleSave = async (e) => {
-    e.preventDefault();
-    const response = await fetch('http://localhost:5050/api/content', {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(`${API_URL}/api/content`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
 
     if (response.ok) {
-      alert('Kaikki kentät päivitetty!');
+      alert('Kaikki kentät päivitetty onnistuneesti!');
+    } else {
+      alert('Tallennus epäonnistui bäkkerin puolella.');
     }
-  };
+  } catch (err) {
+    console.error("Virhe tallennettaessa:", err);
+    alert('Yhteysvirhe bäkkeriin.');
+  }
+};
 
   // Funktio uuden tyhjän projektin lisäämiseen
   const addProject = () => {
     setData({
       ...data,
-      projects: [...data.projects, { name: '', description: '', link: '', category: '' }]
+      projects: [...data.projects, {description: '', category: '', url: ''}] 
     });
   };
 
