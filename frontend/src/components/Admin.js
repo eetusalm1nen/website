@@ -24,7 +24,9 @@ function Admin() {
   };
 
 useEffect(() => {
-  fetch('http://localhost:5050/api/content')
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5050';
+    // Ja sitten fetchissä:
+    fetch(`${API_URL}/api/content`)
     .then(res => res.json())
     .then(dbData => {
       if (dbData) {
@@ -34,11 +36,11 @@ useEffect(() => {
           headerSub: dbData.headerSub || '',
           contactText: dbData.contactText || '',
           contactSecondary: dbData.contactSecondary || '',
-          // Kartoitetaan projektit ja varmistetaan kategoria-kenttä
+          // Varmistetaan että projekti-data on aina taulukkomuodossa, vaikka tietokannassa olisi null tai undefined
           projects: (dbData.projects || []).map(p => ({
-            name: p.name || '',
             description: p.description || '',
-            category: p.category || '' 
+            category: p.category || '' ,
+            url: p.url || ''
           }))
         });
       }
