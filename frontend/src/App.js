@@ -10,17 +10,19 @@ import './App.css';
 function App() {
   const [content, setContent] = useState({});
 
-  useEffect(() => {
-    fetch('http://localhost:5050/api/content')
+    useEffect(() => {
+    
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5050';
+
+    fetch(`${API_URL}/api/content`)
       .then(res => res.json())
       .then(data => {
         if (data) setContent(data);
       })
       .catch(err => console.error("Virhe:", err));
-  }, []);
+    }, []);
 
   return (
-
     <div className="App">
     {/* Nämä kaksi diviä eivät vie tilaa eivätkä siirrä tekstiä */}
     <div className="glow glow-1"></div>
