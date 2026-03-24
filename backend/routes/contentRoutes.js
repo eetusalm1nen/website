@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+// Otetaan skeema käyttöön
 const Content = require('../data/Content');
 
 // Hae sisältö (GET http://localhost:5050/api/content)

@@ -2,6 +2,7 @@ import myImage from '../images/omakuva2.jpg';
 
 function Header( { headerSub }) {
     return (
+        // Header-osio, joka hakee alatekstin backendistä ja näyttää sen kuvan päällä
         <div className="image-container">
             <img src={myImage} alt="Eetu Salminen" className="header-image" />
             

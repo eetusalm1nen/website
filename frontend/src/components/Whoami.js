@@ -4,6 +4,7 @@ import InstagramLogo from '../images/InstagramLogo.svg';
 function WhoAmI({ bio, linkedinUrl }) {
 
   return (
+    // WhoAmI-osio, joka hakee biotekstin ja LinkedIn-linkin backendistä ja näyttää ne sivulla
     <section className="whoami-section">
       <h2> Whoami<span className="red-question">?</span></h2>
 

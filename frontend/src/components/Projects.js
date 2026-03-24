@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react'
 function Projects({ projects }) {
   const [clickCount, setClickCount] = useState(0)
 
-
-
+// Funktio, joka renderöi projektit kategorioittain
 const renderCategory = (categoryName) => {
+  // Suodatetaan projektit halutun kategorian mukaan ja mapataan ne listaksi
   return projects && projects
     .filter(proj => proj.category === categoryName)
     .map((proj, index) => (
@@ -30,6 +30,7 @@ const renderCategory = (categoryName) => {
 };
 
   return (
+    // Projektit-osio, joka hakee projektit backendistä ja näyttää ne kategorioittain listattuna
     <section className="projects-section">
       <h2>Projects<span className="red-question">:</span></h2>
       

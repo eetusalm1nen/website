@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 function Admin() {
+
+  // usestate -hook kirjautumiseen
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // salasanan input
     const [passwordInput, setPasswordInput] = useState('');
+  // itse datan usestate, joka sisältää kaikki muokattavat kentät  
   const [data, setData] = useState({
     bio: '',
     linkedinUrl: '',
@@ -23,6 +27,7 @@ function Admin() {
     }
   };
 
+// Hakee datan backendistä heti komponentin latautuessa
 useEffect(() => {
     const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5050';
     // Ja sitten fetchissä:
@@ -50,13 +55,16 @@ useEffect(() => {
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5050';
 
+  // päivittää tilaa sen mukaan kun kenttiä muokataan
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
+  // tallentaa datan backendille, joka sitten päivittää tietokannan
   const handleSave = async (e) => {
   e.preventDefault();
 
+  // Lähetetään data backendille (sis. virheenkäsittelyn)
   try {
     const response = await fetch(`${API_URL}/api/content`, {
       method: 'POST',
@@ -83,6 +91,7 @@ useEffect(() => {
     });
   };
 
+    // Jos käyttäjä ei ole kirjautunut, näytä kirjautumislomake
     if (!isAuthenticated) {
     return (
      <div style={{ padding: '100px', textAlign: 'center', backgroundColor: '#111', color: '#fff', minHeight: '100vh' }}>
@@ -101,6 +110,7 @@ useEffect(() => {
     );
     }
 
+    // Jos käyttäjä on kirjautunut, näytä muokkauslomake
   return (
     <div style={{ padding: '20px', maxWidth: '700px', margin: 'auto', background: '#f9f9f9', borderRadius: '8px' }}>
       <h2>Muokkaa Portfoliota</h2>

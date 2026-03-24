@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Skeemat datalle jota talletetaan MongoDB:hen
 const ContentSchema = new mongoose.Schema({
   bio: String,
   linkedinUrl: String,
